@@ -1,0 +1,12 @@
+.landing-page {
+  background-color: aquamarine;
+}
+
+.landing-page__btn {
+  background-color: rgb(14, 97, 32);
+  color: black;
+}
+
+.landing-page__title {
+  color: black;
+}

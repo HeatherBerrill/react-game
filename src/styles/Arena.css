@@ -1,0 +1,12 @@
+.arena-page {
+  background-color: var(--primary-color);
+}
+
+.arena-page__btn {
+  background-color: var(--secondary-color);
+  color: black;
+}
+
+.arena-page__title {
+  color: black;
+}

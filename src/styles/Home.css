@@ -1,0 +1,12 @@
+.home-page {
+  background-color: var(--primary-color);
+}
+
+.home-page__btn {
+  background-color: var(--secondary-color);
+  color: black;
+}
+
+.home-page__title {
+  color: black;
+}
