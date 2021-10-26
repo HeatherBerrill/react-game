@@ -1,0 +1,36 @@
+.fighter-box {
+  background-color: burlywood;
+  display: grid;
+  grid-template-columns: 5rem auto 5rem;
+  justify-content: column;
+  grid-template-rows: 25% 50% 25%;
+  grid-template-areas:
+    '. image .'
+    'left image right'
+    '. image .';
+}
+
+.fighters__left-arrow {
+  grid-area: left;
+}
+
+.fighters__right-arrow {
+  grid-area: right;
+}
+
+.fighter {
+  grid-area: image;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.fighter.active {
+  opacity: 1;
+  transition: all 1s ease;
+  transform: scale(1.08);
+}
+
+.fighter-image {
+  height: 10rem;
+  width: auto;
+}
