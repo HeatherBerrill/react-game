@@ -1,7 +1,21 @@
 .arena-page {
-  background-color: var(--primary-color);
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 10% 40% 40% 10%;
+  grid-template-areas:
+    'title'
+    'player 1'
+    'player 2'
+    'button';
 }
 
+.potting-bench {
+  background-color: rgb(53, 110, 67);
+}
+
+.tesco-carpark {
+  background-color: rgb(58, 85, 175);
+}
 .arena-page__btn {
   background-color: var(--secondary-color);
   color: black;
