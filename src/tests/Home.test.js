@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import Home from '../screens/Home';
 import { MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 describe('<Home>', () => {
   test('renders a Choose Fighters heading', () => {
@@ -10,8 +11,8 @@ describe('<Home>', () => {
         <Home />
       </MemoryRouter>
     );
-    const chooseFightersElement = screen.getByText(/Choose Fighters/i);
-    expect(chooseFightersElement).toBeInTheDocument();
+    const headingElement = screen.getByText(/choose fighters/i);
+    expect(headingElement).toBeInTheDocument();
   });
 
   test('renders a Choose an Arena heading', () => {
@@ -23,15 +24,4 @@ describe('<Home>', () => {
     const chooseArenaElement = screen.getByText(/Choose Arena/i);
     expect(chooseArenaElement).toBeInTheDocument();
   });
-
-  //   test('renders a form where a user can pick an arena', () => {
-  //     render(
-  //       <MemoryRouter>
-  //         <Home />
-  //       </MemoryRouter>
-  //     );
-  //     const buttonElement = screen.getByRole('button');
-  //     userEvent.click(buttonElement);
-
-  //   });
 });

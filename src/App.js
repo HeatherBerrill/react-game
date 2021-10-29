@@ -7,7 +7,7 @@ import Arena from './screens/Arena';
 
 function App() {
   const [arena, setArena] = useState('');
-
+  console.log(arena, 'in app');
   return (
     <div className='App'>
       <Switch>

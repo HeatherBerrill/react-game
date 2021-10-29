@@ -1,0 +1,43 @@
+.player-card {
+  border: solid 2px black;
+  border-radius: 3px;
+  align-content: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-rows: 4rem auto;
+  grid-template-areas:
+    'title points'
+    'fighter fighter';
+}
+
+.player-title {
+  font-size: 1rem;
+  align-self: center;
+  justify-self: flex-end;
+  padding: 0.25rem;
+  margin: 1rem;
+  margin-right: 0;
+  border: solid 2px black;
+  border-radius: 3px;
+  grid-area: title;
+}
+
+.player-points {
+  align-self: center;
+  justify-self: flex-start;
+  padding: 0.25rem;
+  margin: 1rem;
+  margin-left: 0;
+  font-size: 1rem;
+  border: solid 2px black;
+  border-radius: 3px;
+  grid-area: points;
+}
+
+.player-fighter {
+  grid-area: fighter;
+  align-self: center;
+  justify-self: center;
+  margin: 1rem;
+}

@@ -1,16 +1,17 @@
 .arena-page {
   display: grid;
+  justify-content: center;
   grid-template-columns: 100vw;
   grid-template-rows: 10% 40% 40% 10%;
   grid-template-areas:
     'title'
-    'player 1'
-    'player 2'
+    'player-1'
+    'player-2'
     'button';
 }
 
-.potting-bench {
-  background-color: rgb(53, 110, 67);
+.potting-shed {
+  background-color: rgb(23, 199, 67);
 }
 
 .tesco-carpark {
@@ -22,5 +23,15 @@
 }
 
 .arena-page__title {
+  grid-area: title;
   color: black;
+}
+
+.player-1__arena {
+  grid-area: player-1;
+}
+
+.player-2__arena {
+  grid-area: player-2;
+  width: 20%;
 }

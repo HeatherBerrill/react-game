@@ -23,12 +23,6 @@ const Fighter = () => {
       >
         {' '}
       </AiOutlineCaretLeft>
-      <AiOutlineCaretRight
-        className='fighters__right-arrow'
-        onClick={nextFighter}
-      >
-        {' '}
-      </AiOutlineCaretRight>
 
       {fighters.map((singleFighter, index) => {
         return (
@@ -46,6 +40,12 @@ const Fighter = () => {
           </div>
         );
       })}
+      <AiOutlineCaretRight
+        className='fighters__right-arrow'
+        onClick={nextFighter}
+      >
+        {' '}
+      </AiOutlineCaretRight>
     </section>
   );
 };
