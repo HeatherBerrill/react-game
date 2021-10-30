@@ -3,42 +3,43 @@ import '../styles/index.css';
 import Player from '../components/Player';
 
 import { Link } from 'react-router-dom';
-// import { useState } from 'react';
+import { useState } from 'react';
 
 const Home = ({ arena, setArena }) => {
-  console.log(arena, 'arena in home');
+  const [chosenArena, setChosenArena] = useState('');
+  console.log(chosenArena, 'cho arena in home');
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   console.log('in handle submit');
-  //   setArena(event.target.value);
-  //   console.log(arena, 'arena in submit');
-  // };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('in handle submit');
+    setArena(chosenArena);
+    setChosenArena('');
+  };
 
   return (
     <div className='home-page'>
       <h2 className='home-page__title'> Choose Fighters</h2>
-      <Player />
-      <Player />
+      <Player className='player-1' />
+      <Player className='player-2' />
       <h2> Choose Arena </h2>
-      <form>
+
+      <form className='arena-form' onSubmit={handleSubmit}>
         <select
+          type='dropdown'
+          value={chosenArena}
           onChange={(event) => {
-            setArena(event.target.value);
+            setChosenArena(event.target.value);
           }}
         >
-          <option disabled defaultValue value=''>
+          <option value='' defaultValue disabled>
             Select One
           </option>
-          <option value='potting-shed'> Potting Bench </option>
+          <option value='potting-shed'> Potting Shed </option>
           <option value='tesco-carpark'> Tesco Carpark </option>
         </select>
 
         <Link to='/arena'>
-          <button type='submit' className='home-page__btn'>
-            {' '}
-            Fight{' '}
-          </button>
+          <button type='submit' className='home-page__btn btn'></button>
         </Link>
       </form>
     </div>

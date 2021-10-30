@@ -2,9 +2,11 @@
   border: solid 2px black;
   border-radius: 3px;
   align-content: center;
-  justify-content: center;
+  justify-content: flex-start;
   display: grid;
-  grid-template-columns: 50vw 50vw;
+  margin: 2rem;
+  padding: 1rem;
+  grid-template-columns: 50% 50%;
   grid-template-rows: 4rem auto;
   grid-template-areas:
     'title points'
@@ -33,11 +35,4 @@
   border: solid 2px black;
   border-radius: 3px;
   grid-area: points;
-}
-
-.player-fighter {
-  grid-area: fighter;
-  align-self: center;
-  justify-self: center;
-  margin: 1rem;
 }
