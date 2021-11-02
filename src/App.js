@@ -7,7 +7,8 @@ import Arena from './screens/Arena';
 
 function App() {
   const [arena, setArena] = useState('');
-  console.log(arena, 'in app');
+  const [fighter, setFighter] = useState('');
+
   return (
     <div className='App'>
       <Switch>
@@ -15,7 +16,12 @@ function App() {
           <Landing />
         </Route>
         <Route exact path='/home'>
-          <Home arena={arena} setArena={setArena} />
+          <Home
+            arena={arena}
+            setArena={setArena}
+            fighter={fighter}
+            setFighter={setFighter}
+          />
         </Route>
         <Route exact path='/arena'>
           <Arena arena={arena} setArena={setArena} />

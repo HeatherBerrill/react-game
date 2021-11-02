@@ -11,7 +11,9 @@ describe('<Home>', () => {
         <Home />
       </MemoryRouter>
     );
-    const headingElement = screen.getByText(/choose fighters/i);
+    const headingElement = screen.getByRole('heading', {
+      name: 'Choose Fighters'
+    });
     expect(headingElement).toBeInTheDocument();
   });
 

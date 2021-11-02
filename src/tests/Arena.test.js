@@ -11,7 +11,17 @@ describe('<Arena>', () => {
         <Arena arena='potting-shed' />
       </MemoryRouter>
     );
-    const headingElement = screen.getByText(/potting shed/i);
+    const headingElement = screen.getByText(/potting-shed/i);
     expect(headingElement).toBeInTheDocument();
+  });
+
+  test('renders the correct arena background', () => {
+    render(
+      <MemoryRouter>
+        <Arena arena='tesco-carpark' />
+      </MemoryRouter>
+    );
+    const backgroundElement = screen.getByTestId('background');
+    expect(backgroundElement).toHaveStyle('background-color: rgb(58, 85, 175)');
   });
 });

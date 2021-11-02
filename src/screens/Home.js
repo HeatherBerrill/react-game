@@ -1,26 +1,25 @@
 import '../styles/Home.css';
 import '../styles/index.css';
 import Player from '../components/Player';
-
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 
-const Home = ({ arena, setArena }) => {
+const Home = ({ setArena, fighter, setFighter }) => {
+  const history = useHistory();
   const [chosenArena, setChosenArena] = useState('');
-  console.log(chosenArena, 'cho arena in home');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('in handle submit');
     setArena(chosenArena);
     setChosenArena('');
+    history.push('/arena');
   };
 
   return (
     <div className='home-page'>
       <h2 className='home-page__title'> Choose Fighters</h2>
-      <Player className='player-1' />
-      <Player className='player-2' />
+      <Player className='player-1' fighter={fighter} setFighter={setFighter} />
+      <Player className='player-2' fighter={fighter} setFighter={setFighter} />
       <h2> Choose Arena </h2>
 
       <form className='arena-form' onSubmit={handleSubmit}>
@@ -37,10 +36,7 @@ const Home = ({ arena, setArena }) => {
           <option value='potting-shed'> Potting Shed </option>
           <option value='tesco-carpark'> Tesco Carpark </option>
         </select>
-
-        <Link to='/arena'>
-          <button type='submit' className='home-page__btn btn'></button>
-        </Link>
+        <button type='submit' className='home-page__btn btn'></button>
       </form>
     </div>
   );
