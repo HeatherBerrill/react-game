@@ -8,7 +8,8 @@ import Arena from './screens/Arena';
 function App() {
   const [arena, setArena] = useState('');
   const [fighter, setFighter] = useState('');
-
+  const [player1, setPlayer1] = useState({ fighter: '', points: 0 });
+  const [player2, setPlayer2] = useState({ fighter: '', points: 0 });
   return (
     <div className='App'>
       <Switch>
@@ -21,10 +22,21 @@ function App() {
             setArena={setArena}
             fighter={fighter}
             setFighter={setFighter}
+            player1={player1}
+            setPlayer1={setPlayer1}
+            player2={player2}
+            setPlayer2={setPlayer2}
           />
         </Route>
         <Route exact path='/arena'>
-          <Arena arena={arena} setArena={setArena} />
+          <Arena
+            arena={arena}
+            setArena={setArena}
+            player1={player1}
+            setPlayer1={setPlayer1}
+            player2={player2}
+            setPlayer2={setPlayer2}
+          />
         </Route>
       </Switch>
     </div>

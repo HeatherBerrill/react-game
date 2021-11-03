@@ -2,22 +2,19 @@
   /* background-color: var(--color-white); */
   background-color: rgb(179, 149, 149);
   height: 100vh;
-  margin: 0;
+  justify-content: center;
   display: grid;
-  grid-template-columns: 100vw;
-  grid-template-rows: 4rem auto auto 4rem 4rem;
+  grid-template-columns: 70vw;
+  grid-template-rows: 3rem 4rem auto 4rem auto 3rem 4rem 3rem;
   grid-template-areas:
     'title'
     'player-1'
+    'fighter1'
     'player-2'
+    'fighter2'
+    'arena-title'
     'arena-form'
     'form-btn';
-}
-
-.home-page__btn {
-  grid-area: form-btn;
-  background-color: var(--secondary-color);
-  color: rgb(255, 255, 255);
 }
 
 .home-page__title {
@@ -29,6 +26,27 @@
   grid-area: player-1;
 }
 
+.player-fighter1 {
+  grid-area: fighter1;
+}
+
 .player-2 {
   grid-area: player-2;
+}
+
+.player-fighter2 {
+  grid-area: fighter2;
+}
+
+.arena-form {
+  grid-area: arena-form;
+  padding: 0.5rem;
+  margin: 0.25rem;
+}
+.home-page__btn {
+  grid-area: form-btn;
+  background-color: var(--secondary-color);
+  color: rgb(255, 255, 255);
+  margin: 0.25rem;
+  padding: 0.25rem;
 }

@@ -1,16 +1,14 @@
 .player-card {
-  border: solid 2px black;
-  border-radius: 3px;
+  /* border: solid 2px black;
+  border-radius: 3px; */
   align-content: center;
   justify-content: flex-start;
   display: grid;
   margin: 2rem;
   padding: 1rem;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 4rem auto;
-  grid-template-areas:
-    'title points'
-    'fighter fighter';
+  grid-template-rows: 100%;
+  grid-template-areas: 'title points';
 }
 
 .player-title {

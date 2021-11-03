@@ -1,10 +1,20 @@
 import '../styles/Home.css';
 import '../styles/index.css';
-import Player from '../components/Player';
+import Player1 from '../components/Player1';
+import Player2 from '../components/Player2';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
+import Fighter from '../components/Fighter';
 
-const Home = ({ setArena, fighter, setFighter }) => {
+const Home = ({
+  setArena,
+  fighter,
+  setFighter,
+  player1,
+  setPlayer1,
+  player2,
+  setPlayer2
+}) => {
   const history = useHistory();
   const [chosenArena, setChosenArena] = useState('');
 
@@ -18,9 +28,31 @@ const Home = ({ setArena, fighter, setFighter }) => {
   return (
     <div className='home-page'>
       <h2 className='home-page__title'> Choose Fighters</h2>
-      <Player className='player-1' fighter={fighter} setFighter={setFighter} />
-      <Player className='player-2' fighter={fighter} setFighter={setFighter} />
-      <h2> Choose Arena </h2>
+      <Player1
+        className='player-1'
+        player1={player1}
+        setPlayer1={setPlayer1}
+        fighter={fighter}
+        setFighter={setFighter}
+      />
+      <Fighter
+        className='player-fighter1'
+        fighter={fighter}
+        setFighter={setFighter}
+      />
+      <Player2
+        className='player-2'
+        player2={player2}
+        setPlayer2={setPlayer2}
+        fighter={fighter}
+        setFighter={setFighter}
+      />
+      <Fighter
+        className='player-fighter2'
+        fighter={fighter}
+        setFighter={setFighter}
+      />
+      <h2 className='arena-title'> Choose Arena </h2>
 
       <form className='arena-form' onSubmit={handleSubmit}>
         <select
@@ -36,7 +68,10 @@ const Home = ({ setArena, fighter, setFighter }) => {
           <option value='potting-shed'> Potting Shed </option>
           <option value='tesco-carpark'> Tesco Carpark </option>
         </select>
-        <button type='submit' className='home-page__btn btn'></button>
+        <button type='submit' className='home-page__btn btn'>
+          {' '}
+          Select
+        </button>
       </form>
     </div>
   );
