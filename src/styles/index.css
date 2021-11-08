@@ -34,3 +34,8 @@ ul {
   border-radius: 3px;
   text-transform: uppercase;
 }
+
+.btn:disabled {
+  background-color: grey;
+  color: rgb(180, 180, 180);
+}

@@ -12,6 +12,7 @@ const fighters = [
     warCry: 'war cry 1',
     move: 'constrict',
     type: 'normal',
+    insect: 'worm',
     image: worm
   },
   {
@@ -21,6 +22,7 @@ const fighters = [
     warCry: 'war cry 2',
     move: 'web attack',
     type: 'normal',
+    insect: 'spider',
     image: spider
   },
   {
@@ -30,6 +32,7 @@ const fighters = [
     warCry: 'war cry 3',
     move: 'stinger',
     type: 'normal',
+    insect: 'bee',
     image: bee
   },
   {
@@ -39,6 +42,7 @@ const fighters = [
     warCry: 'war cry 4',
     move: 'bite',
     type: 'normal',
+    insect: 'ladybird',
     image: ladybird
   },
   {
@@ -48,6 +52,7 @@ const fighters = [
     warCry: 'war cry 5',
     move: 'sting',
     type: 'normal',
+    insect: 'wasp',
     image: wasp
   }
 ];

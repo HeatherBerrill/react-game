@@ -4,12 +4,15 @@ import Player1 from '../components/Player1';
 import Player2 from '../components/Player2';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
-import Fighter from '../components/Fighter';
+import Fighter1 from '../components/Fighter1';
+import Fighter2 from '../components/Fighter2';
 
 const Home = ({
   setArena,
-  fighter,
-  setFighter,
+  fighter1,
+  setFighter1,
+  fighter2,
+  setFighter2,
   player1,
   setPlayer1,
   player2,
@@ -32,25 +35,25 @@ const Home = ({
         className='player-1'
         player1={player1}
         setPlayer1={setPlayer1}
-        fighter={fighter}
-        setFighter={setFighter}
+        fighter1={fighter1}
+        setFighter1={setFighter1}
       />
-      <Fighter
+      <Fighter1
         className='player-fighter1'
-        fighter={fighter}
-        setFighter={setFighter}
+        fighter1={fighter1}
+        setFighter1={setFighter1}
       />
       <Player2
         className='player-2'
         player2={player2}
         setPlayer2={setPlayer2}
-        fighter={fighter}
-        setFighter={setFighter}
+        fighter2={fighter2}
+        setFighter2={setFighter2}
       />
-      <Fighter
+      <Fighter2
         className='player-fighter2'
-        fighter={fighter}
-        setFighter={setFighter}
+        fighter2={fighter2}
+        setFighter2={setFighter2}
       />
       <h2 className='arena-title'> Choose Arena </h2>
 
@@ -68,9 +71,13 @@ const Home = ({
           <option value='potting-shed'> Potting Shed </option>
           <option value='tesco-carpark'> Tesco Carpark </option>
         </select>
-        <button type='submit' className='home-page__btn btn'>
+        <button
+          type='submit'
+          className='home-page__btn btn'
+          disabled={!fighter1 || !fighter2 || !chosenArena ? true : false}
+        >
           {' '}
-          Select
+          Fight!
         </button>
       </form>
     </div>
