@@ -21,10 +21,12 @@ const Fighter1 = ({ fighter1, setFighter1 }) => {
   };
 
   const handlePickMe = () => {
+    console.log('in pik me');
     const name = fighters[chosenFighter].name;
     setFighter1(name);
     setSelected1(true);
   };
+
   if (selected1 === true) {
     return <h2> Ready to Fight! </h2>;
   } else {

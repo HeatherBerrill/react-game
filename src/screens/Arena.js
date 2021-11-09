@@ -3,6 +3,8 @@ import Player1 from '../components/Player1';
 import Player2 from '../components/Player2';
 import fighters from '../fighters';
 import { Link } from 'react-router-dom';
+import { battle } from '../battle';
+import { useEffect } from 'react';
 
 const Arena = ({
   arena,
@@ -19,6 +21,10 @@ const Arena = ({
     setFighter1('');
     setFighter2('');
   };
+
+  useEffect(() => {
+    battle(player1, player2);
+  }, [player1, player2]);
 
   return (
     <section data-testid='background' className={`${arena} arena-page`}>

@@ -1,11 +1,11 @@
 .home-page {
   /* background-color: var(--color-white); */
-  background-color: rgb(179, 149, 149);
+  background-color: rgb(46, 172, 63);
   height: 100vh;
   justify-content: center;
   display: grid;
   grid-template-columns: 70vw;
-  grid-template-rows: 3rem 4rem auto 4rem auto 3rem 4rem 3rem;
+  grid-template-rows: 3rem 6rem auto 6rem auto 3rem 4rem 3rem;
   grid-template-areas:
     'title'
     'player-1'
