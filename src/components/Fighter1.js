@@ -21,7 +21,6 @@ const Fighter1 = ({ fighter1, setFighter1 }) => {
   };
 
   const handlePickMe = () => {
-    console.log('in pik me');
     const name = fighters[chosenFighter].name;
     setFighter1(name);
     setSelected1(true);
@@ -60,12 +59,9 @@ const Fighter1 = ({ fighter1, setFighter1 }) => {
         <AiOutlineCaretRight
           className='fighters__right-arrow'
           onClick={nextImage}
-        >
-          {' '}
-        </AiOutlineCaretRight>
-        <button className='fighter-btn btn' onClick={handlePickMe}>
-          {' '}
-          Pick me!{' '}
+        ></AiOutlineCaretRight>
+        <button onClick={handlePickMe} className='fighter-btn btn'>
+          Pick me!
         </button>
       </section>
     );

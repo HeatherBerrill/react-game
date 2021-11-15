@@ -1,20 +1,21 @@
 .fighter-box {
-  background-color: white;
-  border-radius: 3px;
-  height: 8rem;
-  /* margin: 0.5rem; */
+  border-bottom: solid 2px rgb(42, 94, 49);
+  width: 60%;
+  height: 6rem;
+  justify-self: center;
   justify-content: center;
   align-items: center;
   display: grid;
   flex-direction: row;
-
-  grid-template-columns: 5rem auto 5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  grid-template-columns: 10% 80% 10%;
   justify-content: column;
   grid-template-rows: 25% 50% 25%;
   grid-template-areas:
-    '. name .'
+    '. image .'
     'left image right'
-    '. button .';
+    'button button button';
 }
 
 .fighters__left-arrow {
@@ -34,6 +35,7 @@
   width: 8rem;
   height: 8rem;
   display: grid;
+  justify-self: center;
   justify-content: space-between;
   grid-template-columns: 100%;
   grid-template-rows: 30% 70%;
@@ -63,7 +65,9 @@
 }
 
 .fighter-btn {
-  grid-area: button;
+  color: white;
+  /* grid-area: button; */
   justify-self: center;
   padding: 4px;
+  background-color: rgb(5, 143, 102);
 }

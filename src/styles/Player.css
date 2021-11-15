@@ -1,20 +1,22 @@
 .player-card {
-  border-bottom: solid 3px white;
-  align-content: space-between;
+  border-bottom: solid 2px rgb(42, 94, 49);
+  /* background-color: rgb(255, 255, 255); */
+  /* align-content: space-between; */
   margin: 0.5rem;
+  margin-bottom: 1.5rem;
   display: grid;
   padding: 0.25rem 0;
   grid-template-columns: 25% auto auto 25%;
   grid-template-rows: 60% 40%;
   grid-template-areas:
-    '. title title .'
+    'title title . .'
     'points points button button';
 }
 
 .player-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   align-self: center;
-
+  justify-self: flex-start;
   padding: 0.25rem;
   /* margin: 1rem; */
   margin-right: 0;
@@ -27,14 +29,15 @@
   align-self: center;
   justify-self: flex-start;
   padding: 0.25rem;
-  /* margin: 1rem; */
   margin-left: 0;
-  font-size: 1rem;
+  font-size: 0.75rem;
   border-radius: 3px;
   grid-area: points;
 }
 
 .player-btn {
+  justify-self: flex-end;
   grid-area: button;
   font-size: 0.75rem;
+  padding: 0 5px;
 }

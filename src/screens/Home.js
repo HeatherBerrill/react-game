@@ -29,58 +29,62 @@ const Home = ({
   };
 
   return (
-    <div className='home-page'>
-      <h2 className='home-page__title'> Choose Fighters</h2>
-      <Player1
-        className='player-1'
-        player1={player1}
-        setPlayer1={setPlayer1}
-        fighter1={fighter1}
-        setFighter1={setFighter1}
-      />
-      <Fighter1
-        className='player-fighter1'
-        fighter1={fighter1}
-        setFighter1={setFighter1}
-      />
-      <Player2
-        className='player-2'
-        player2={player2}
-        setPlayer2={setPlayer2}
-        fighter2={fighter2}
-        setFighter2={setFighter2}
-      />
-      <Fighter2
-        className='player-fighter2'
-        fighter2={fighter2}
-        setFighter2={setFighter2}
-      />
-      <h2 className='arena-title'> Choose Arena </h2>
+    <main className='home-page'>
+      <section className='choose-fighters'>
+        <h2 className='home-page__title'> Choose Fighters</h2>
+        <Player1
+          className='player-1'
+          player1={player1}
+          setPlayer1={setPlayer1}
+          fighter1={fighter1}
+          setFighter1={setFighter1}
+        />
+        <Fighter1
+          className='player-fighter1'
+          fighter1={fighter1}
+          setFighter1={setFighter1}
+        />
+        <Player2
+          className='player-2'
+          player2={player2}
+          setPlayer2={setPlayer2}
+          fighter2={fighter2}
+          setFighter2={setFighter2}
+        />
+        <Fighter2
+          className='player-fighter2'
+          fighter2={fighter2}
+          setFighter2={setFighter2}
+        />
+      </section>
+      <section className='choose-arena'>
+        <h2 className='arena-title'> Choose Arena </h2>
 
-      <form className='arena-form' onSubmit={handleSubmit}>
-        <select
-          type='dropdown'
-          value={chosenArena}
-          onChange={(event) => {
-            setChosenArena(event.target.value);
-          }}
-        >
-          <option value='' defaultValue disabled>
-            Select One
-          </option>
-          <option value='potting-shed'> Potting Shed </option>
-          <option value='tesco-carpark'> Tesco Carpark </option>
-        </select>
-        <button
-          type='submit'
-          className='home-page__btn btn'
-          disabled={!fighter1 || !fighter2 || !chosenArena ? true : false}
-        >
-          {' '}
-          Fight!
-        </button>
-      </form>
-    </div>
+        <form className='arena-form' onSubmit={handleSubmit}>
+          <select
+            type='dropdown'
+            value={chosenArena}
+            onChange={(event) => {
+              setChosenArena(event.target.value);
+            }}
+          >
+            <option value='' defaultValue disabled>
+              Select One
+            </option>
+            <option value='potting-shed'> Potting Shed </option>
+            <option value='tesco-carpark'> Tesco Carpark </option>
+          </select>
+          <button
+            type='submit'
+            className='home-page__btn btn'
+            disabled={!fighter1 || !fighter2 || !chosenArena ? true : false}
+          >
+            {' '}
+            Fight!
+          </button>
+        </form>
+      </section>
+    </main>
   );
 };
 

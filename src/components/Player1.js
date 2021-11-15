@@ -15,7 +15,6 @@ const Player1 = ({ fighter1, player1, setPlayer1 }) => {
         className='player-btn btn'
         disabled={player1.points === 0 ? true : false}
       >
-        {' '}
         Reset Points
       </button>
     </div>
