@@ -22,9 +22,11 @@ const Arena = ({
     setFighter2('');
   };
 
-  useEffect(() => {
-    battle(player1, player2);
-  }, [player1, player2]);
+  battle(player1, player2);
+
+  // useEffect(() => {
+  //   battle(player1, player2);
+  // }, [player1, player2]);
 
   return (
     <section data-testid='background' className={`${arena} arena-page`}>
