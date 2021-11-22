@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import Fighter1 from '../components/Fighter1';
 import Fighter2 from '../components/Fighter2';
-
+import Frame from '../components/Frame';
 const Home = ({
   setArena,
   fighter1,
@@ -32,30 +32,34 @@ const Home = ({
     <main className='home-page'>
       <section className='choose-fighters'>
         <h2 className='home-page__title'> Choose Fighters</h2>
-        <Player1
-          className='player-1'
-          player1={player1}
-          setPlayer1={setPlayer1}
-          fighter1={fighter1}
-          setFighter1={setFighter1}
-        />
-        <Fighter1
-          className='player-fighter1'
-          fighter1={fighter1}
-          setFighter1={setFighter1}
-        />
-        <Player2
-          className='player-2'
-          player2={player2}
-          setPlayer2={setPlayer2}
-          fighter2={fighter2}
-          setFighter2={setFighter2}
-        />
-        <Fighter2
-          className='player-fighter2'
-          fighter2={fighter2}
-          setFighter2={setFighter2}
-        />
+        <Frame className='player1-frame'>
+          <Player1
+            className='player-1'
+            player1={player1}
+            setPlayer1={setPlayer1}
+            fighter1={fighter1}
+            setFighter1={setFighter1}
+          />
+          <Fighter1
+            className='player-fighter1'
+            fighter1={fighter1}
+            setFighter1={setFighter1}
+          />
+        </Frame>
+        <Frame className='player2-frame'>
+          <Player2
+            className='player-2'
+            player2={player2}
+            setPlayer2={setPlayer2}
+            fighter2={fighter2}
+            setFighter2={setFighter2}
+          />
+          <Fighter2
+            className='player-fighter2'
+            fighter2={fighter2}
+            setFighter2={setFighter2}
+          />
+        </Frame>
       </section>
       <section className='choose-arena'>
         <h2 className='arena-title'> Choose Arena </h2>

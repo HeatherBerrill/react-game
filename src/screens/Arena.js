@@ -1,7 +1,7 @@
 import '../styles/Arena.css';
 import Player1 from '../components/Player1';
 import Player2 from '../components/Player2';
-import fighters from '../fighters';
+import { fighters } from '../fighters';
 import { Link } from 'react-router-dom';
 import { battle } from '../battle';
 import { useEffect } from 'react';
@@ -21,16 +21,21 @@ const Arena = ({
     setFighter1('');
     setFighter2('');
   };
-
-  battle(player1, player2);
+  const playBattle = () => {
+    console.log(fighters, 'arena comp');
+    battle(player1, player2, fighters);
+  };
 
   // useEffect(() => {
-  //   battle(player1, player2);
-  // }, [player1, player2]);
+  //   console.log(fighters, 'fighters in arena');
+  // }, [fighter1, fighter2]);
 
   return (
     <section data-testid='background' className={`${arena} arena-page`}>
-      <h1 className='arena-page__title'> {arena}</h1>
+      <button onClick={playBattle} className='arena-page__title'>
+        {' '}
+        {arena}
+      </button>
       <Player1
         className='player-1__arena'
         player1={player1}
@@ -39,7 +44,7 @@ const Arena = ({
       />
       {fighters.map((singleFighter) => {
         return (
-          <div className='fighter1-imagebox__arena'>
+          <div key={singleFighter.name} className='fighter1-imagebox__arena'>
             {singleFighter.name === fighter1 && (
               <img
                 className={'player-image'}
@@ -60,7 +65,7 @@ const Arena = ({
 
       {fighters.map((singleFighter) => {
         return (
-          <div className='fighter2-imagebox__arena'>
+          <div key={singleFighter.name} className='fighter2-imagebox__arena'>
             {singleFighter.name === fighter2 && (
               <img
                 className={'player-image'}

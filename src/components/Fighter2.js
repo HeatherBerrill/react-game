@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import fighters from '../fighters';
+import { fighters } from '../fighters';
 import '../styles/Fighter.css';
+import pikMeBtn from '../images/btn_test1.png';
 import { AiOutlineCaretRight, AiOutlineCaretLeft } from 'react-icons/ai';
 const Fighter2 = ({ fighter2, setFighter2 }) => {
   const [image, setImage] = useState(0);
@@ -61,10 +62,12 @@ const Fighter2 = ({ fighter2, setFighter2 }) => {
         >
           {' '}
         </AiOutlineCaretRight>
-        <button className='fighter-btn btn' onClick={handlePickMe}>
-          {' '}
-          Pick me!{' '}
-        </button>
+        <img
+          src={pikMeBtn}
+          alt='select character button'
+          onClick={handlePickMe}
+          className='fighter-btn btn'
+        ></img>
       </section>
     );
   }

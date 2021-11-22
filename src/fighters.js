@@ -4,11 +4,11 @@ import bee from './images/bee.jpg';
 import ladybird from './images/ladybird.jpg';
 import wasp from './images/wasp.jpg';
 
-const fighters = [
+export const fighters = [
   {
     name: 'Pete',
     health: 100,
-    attackDamage: 5,
+    attackDamage: 2,
     warCry: 'war cry 1',
     move: 'constrict',
     type: 'normal',
@@ -18,7 +18,7 @@ const fighters = [
   {
     name: 'Hunter',
     health: 100,
-    attackDamage: 4,
+    attackDamage: 5,
     warCry: 'war cry 2',
     move: 'web attack',
     type: 'normal',
@@ -28,7 +28,7 @@ const fighters = [
   {
     name: 'Bumbledoor',
     health: 100,
-    attackDamage: 6,
+    attackDamage: 4,
     warCry: 'war cry 3',
     move: 'stinger',
     type: 'normal',
@@ -38,7 +38,7 @@ const fighters = [
   {
     name: 'Lady Loo',
     health: 100,
-    attackDamage: 5,
+    attackDamage: 4,
     warCry: 'war cry 4',
     move: 'bite',
     type: 'normal',
@@ -48,7 +48,7 @@ const fighters = [
   {
     name: 'Stingy McSting',
     health: 100,
-    attackDamage: 6,
+    attackDamage: 3,
     warCry: 'war cry 5',
     move: 'sting',
     type: 'normal',
@@ -57,4 +57,4 @@ const fighters = [
   }
 ];
 
-export default fighters;
+// export default fighters;

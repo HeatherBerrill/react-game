@@ -11,19 +11,18 @@
 }
 
 .choose-fighters {
-  background-color: rgba(136, 179, 140, 0.644);
+  /* background-color: rgba(136, 179, 140, 0.644); */
   margin: 0.75rem;
   border-radius: 5px;
   grid-area: fighters;
   display: grid;
+
   grid-template-columns: 100%;
-  grid-template-rows: 10% 20% 25% 20% 20%;
+  grid-template-rows: 6% 47% 47%;
   grid-template-areas:
     'title'
-    'player-1'
-    'fighter1'
-    'player-2'
-    'fighter2';
+    'frame1'
+    'frame2';
 }
 .home-page__title {
   font-size: 1.25rem;
@@ -31,8 +30,32 @@
   color: black;
 }
 
+.player1-frame {
+  /* background-color: red;
+  margin: 1rem; */
+  grid-area: frame1;
+
+  /* display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 90%;
+  grid-template-areas:
+    'player1'
+    'fighter1'; */
+}
+
+.player2-frame {
+  /* margin: 1rem;
+  background-color: rgb(35, 56, 114); */
+  grid-area: frame2;
+  display: grid;
+  /* grid-template-columns: 100%;
+  grid-template-rows: 30% 70%;
+  grid-template-areas:
+    'player2'
+    'fighter2'; */
+}
 .player-1 {
-  grid-area: player-1;
+  grid-area: player1;
 }
 
 .player-fighter1 {
