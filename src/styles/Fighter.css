@@ -1,7 +1,7 @@
 .fighter-box {
-  border-bottom: solid 2px rgb(42, 94, 49);
+  /* background-color: white; */
   width: 60%;
-  height: 6rem;
+  height: 7rem;
   justify-self: center;
   justify-content: center;
   align-items: center;
@@ -67,7 +67,7 @@
 
 .fighter-btn {
   height: auto;
-  width: 8rem;
+  width: 6rem;
   border: none;
   grid-area: button;
   justify-self: center;

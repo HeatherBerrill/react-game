@@ -1,13 +1,13 @@
 .frame {
-  background-color: rgba(191, 143, 235, 0.507);
+  background-image: url('../images/Insect_Battler_wood_board.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 15rem;
+  width: 100%;
   margin: 0.5rem;
-  /* display: block; */
-  box-shadow: 3px 3px rgba(0, 0, 0, 0.329);
+  justify-self: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  clip-path: path(
-    'M0.5,1 C0.5,1,0,0.7,0,0.3 A0.25,0.25,1,1,1,0.5,0.3 A0.25,0.25,1,1,1,1,0.3 C1,0.7,0.5,1,0.5,1 Z'
-  );
 }
