@@ -9,14 +9,14 @@ const Player2 = ({ fighter2, player2, setPlayer2 }) => {
 
   return (
     <div className='player-card'>
-      <h1 className='player-title'> Player2 </h1>
+      {/* <h1 className='player-title'> Player2 </h1> */}
       <h2 className='player-points'> Points: {player2.points} </h2>
       <button
         className='player-btn btn'
         disabled={player2.points === 0 ? true : false}
       >
         {' '}
-        Reset Points
+        Reset
       </button>
     </div>
   );

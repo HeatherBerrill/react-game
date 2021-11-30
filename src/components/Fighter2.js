@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { fighters } from '../fighters';
 import '../styles/Fighter.css';
 import pikMeBtn from '../images/green_btn.png';
-import { AiOutlineCaretRight, AiOutlineCaretLeft } from 'react-icons/ai';
+import left from '../images/left_arrow.png';
+import right from '../images/right_arrow.png';
+
 const Fighter2 = ({ fighter2, setFighter2 }) => {
   const [image, setImage] = useState(0);
   const [chosenFighter, setChosenFighter] = useState(0);
@@ -31,12 +33,13 @@ const Fighter2 = ({ fighter2, setFighter2 }) => {
   } else {
     return (
       <section className='fighter-box'>
-        <AiOutlineCaretLeft
-          className='fighters__left-arrow'
-          onClick={prevImage}
-        >
-          {' '}
-        </AiOutlineCaretLeft>
+        <div className='left-arrow-container'>
+          <img
+            src={left}
+            className='fighters__left-arrow'
+            onClick={prevImage}
+          ></img>
+        </div>
 
         {fighters.map((singleFighter, index) => {
           return (
@@ -56,12 +59,13 @@ const Fighter2 = ({ fighter2, setFighter2 }) => {
             </div>
           );
         })}
-        <AiOutlineCaretRight
-          className='fighters__right-arrow'
-          onClick={nextImage}
-        >
-          {' '}
-        </AiOutlineCaretRight>
+        <div className='right-arrow-container'>
+          <img
+            src={right}
+            className='fighters__right-arrow'
+            onClick={nextImage}
+          ></img>
+        </div>
         <img
           src={pikMeBtn}
           alt='select character button'

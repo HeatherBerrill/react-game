@@ -1,8 +1,5 @@
 .frame {
-  background-image: url('../images/Insect_Battler_wood_board.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  height: 15rem;
+  height: 14rem;
   width: 100%;
   margin: 0.5rem;
   justify-self: center;

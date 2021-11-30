@@ -31,7 +31,7 @@ const Home = ({
   return (
     <main className='home-page'>
       <section className='choose-fighters'>
-        <h2 className='home-page__title'> Choose Fighters</h2>
+        {/* <h2 className='home-page__title'> Choose Fighters</h2> */}
         <Frame className='player1-frame'>
           <Player1
             className='player-1'

@@ -1,6 +1,5 @@
 .fighter-box {
-  /* background-color: white; */
-  width: 60%;
+  width: 70%;
   height: 7rem;
   justify-self: center;
   justify-content: center;
@@ -19,16 +18,43 @@
     'button button button';
 }
 
-.fighters__left-arrow {
+.left-arrow-container {
+  background-image: url('../images/arrow_bck_1.png');
+  background-size: contain;
   grid-area: left;
+  top: 0;
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: flex-start;
+}
+
+.fighters__left-arrow {
+  height: 3rem;
+  width: auto;
   align-self: center;
   justify-self: center;
 }
 
+.right-arrow-container {
+  background-image: url('../images/arrow_bck_2.png');
+  background-size: contain;
+  grid-area: right;
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: flex-end;
+}
+
 .fighters__right-arrow {
+  height: 3rem;
+  width: auto;
   align-self: center;
   justify-self: center;
-  grid-area: right;
 }
 
 .fighter {
@@ -59,6 +85,8 @@
 }
 
 .fighter-name {
+  font-family: 'Short Stack', cursive;
+  color: rgb(53, 41, 27);
   grid-area: f-name;
   align-self: center;
   justify-self: center;

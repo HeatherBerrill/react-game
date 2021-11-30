@@ -1,29 +1,50 @@
 .landing-page {
-  background-image: linear-gradient(
-      rgba(21, 161, 21, 0.7),
-      rgba(21, 161, 21, 0.8)
-    ),
-    url('../images/bugs.jpg');
-  display: grid;
-  grid-template-columns: 100vw;
-  grid-template-rows: 70vh 30vh;
-  grid-template-areas:
-    'title'
-    'btn';
+  position: absolute;
+  background-image: url('../images/mobile_landing_page.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+.game-title {
+  /* border: solid 2px black; */
+  background-image: url('../images/title.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 18rem;
+  width: auto;
+  top: 4%;
+  left: 15%;
+}
+
+.play-button-container {
+  background-image: url('../images/play_button_bck.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 11rem;
+  width: 11rem;
+  position: absolute;
+  top: 55%;
+  left: 23%;
 }
 
 .landing-page__btn {
-  grid-area: btn;
-  background-color: rgb(14, 97, 32);
-  color: rgb(255, 255, 255);
-  padding: 0.5rem 1rem;
+  background-image: url('../images/play_button.png');
+  height: 4rem;
+  width: auto;
+  position: relative;
+  top: 22%;
+  left: 6%;
+  /* padding: 0.5rem 1rem; */
   font-size: 1.5rem;
 }
 
-.landing-page__title {
-  padding-top: 5rem;
-  grid-area: title;
-  color: rgb(255, 255, 255);
-  font-size: 5rem;
-  text-shadow: -7px 3px rgba(17, 0, 109, 0.568);
+.landing-page__btn:hover {
+  transform: scale(1.2);
+}
+
+.landing-page__btn:active {
+  transform: scale(0.95);
 }
