@@ -1,37 +1,32 @@
 .player-card {
   align-content: flex-end;
   display: flex;
-  width: 60%;
+  width: 75%;
 
-  height: 8rem;
-  flex: 2;
+  height: 4rem;
+  position: relative;
+  top: 1rem;
+  right: 0;
   justify-content: flex-end;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   margin-bottom: 0;
   padding-top: 0.5rem;
   padding-bottom: 0;
 }
 
-/* .player-title {
-  font-size: 1.25rem;
-  align-self: center;
-  justify-self: flex-start;
-  padding: 0.25rem;
-  margin-right: 0;
-  border-radius: 3px;
-} */
-
 .player-points {
   font-family: 'Short Stack', cursive;
   color: rgb(53, 41, 27);
   align-self: center;
-  /* justify-self: flex-start; */
+
   padding-right: 0.25rem;
   margin-left: 0;
   font-size: 0.75rem;
 }
 
 .player-btn {
+  height: 1.5rem;
+  width: auto;
   align-self: center;
   font-size: 0.75rem;
   padding: 0 3px;

@@ -1,23 +1,26 @@
 import '../styles/Player.css';
 import '../styles/index.css';
 import { useEffect } from 'react';
+import deleteBtn from '../images/delete-btn-1.png';
 
 const Player2 = ({ fighter2, player2, setPlayer2 }) => {
   useEffect(() => {
     setPlayer2({ ...player2, fighter: fighter2 });
   }, [fighter2]);
 
+  const clearPoints = () => {
+    setPlayer2({ ...player2, points: 0 });
+  };
+
   return (
     <div className='player-card'>
-      {/* <h1 className='player-title'> Player2 </h1> */}
       <h2 className='player-points'> Points: {player2.points} </h2>
-      <button
+      <img
+        src={deleteBtn}
+        alt='clear points'
         className='player-btn btn'
-        disabled={player2.points === 0 ? true : false}
-      >
-        {' '}
-        Reset
-      </button>
+        onClick={clearPoints}
+      ></img>
     </div>
   );
 };

@@ -19,19 +19,18 @@ const Home = ({
   setPlayer2
 }) => {
   const history = useHistory();
-  const [chosenArena, setChosenArena] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setArena(chosenArena);
-    setChosenArena('');
-    history.push('/arena');
+  const handleChoice = (arenaChoice) => {
+    if (fighter1 && fighter2) {
+      setArena(arenaChoice);
+      history.push('/arena');
+    }
   };
-
+  console.log(fighter2, 'f2');
+  console.log(fighter1, 'f1');
   return (
     <main className='home-page'>
       <section className='choose-fighters'>
-        {/* <h2 className='home-page__title'> Choose Fighters</h2> */}
         <Frame className='player1-frame'>
           <Player1
             className='player-1'
@@ -62,31 +61,36 @@ const Home = ({
         </Frame>
       </section>
       <section className='choose-arena'>
-        <h2 className='arena-title'> Choose Arena </h2>
+        <div
+          disabled={!fighter1 || !fighter2 ? true : false}
+          className='potting-shed-choice'
+          onClick={() => {
+            handleChoice('potting-shed');
+          }}
+        ></div>
+        <div
+          disabled={!fighter1 || !fighter2 ? true : false}
+          className='tesco-carpark-choice'
+          onClick={() => {
+            handleChoice('tesco-carpark');
+          }}
+        ></div>
 
-        <form className='arena-form' onSubmit={handleSubmit}>
-          <select
-            type='dropdown'
-            value={chosenArena}
-            onChange={(event) => {
-              setChosenArena(event.target.value);
-            }}
-          >
-            <option value='' defaultValue disabled>
-              Select One
-            </option>
-            <option value='potting-shed'> Potting Shed </option>
-            <option value='tesco-carpark'> Tesco Carpark </option>
-          </select>
-          <button
-            type='submit'
-            className='home-page__btn btn'
-            disabled={!fighter1 || !fighter2 || !chosenArena ? true : false}
-          >
-            {' '}
-            Fight!
-          </button>
-        </form>
+        <div
+          className='arena-3-choice'
+          disabled={true}
+          onClick={() => {
+            handleChoice('arena-3');
+          }}
+        ></div>
+
+        <div
+          className='arena-4-choice'
+          disabled={true}
+          onClick={() => {
+            handleChoice('arena-4');
+          }}
+        ></div>
       </section>
     </main>
   );

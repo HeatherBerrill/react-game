@@ -23,11 +23,6 @@
     'frame1'
     'frame2';
 }
-/* .home-page__title {
-  font-size: 1.25rem;
-  grid-area: title;
-  color: black;
-} */
 
 .player1-frame {
   grid-area: frame1;
@@ -55,24 +50,44 @@
 .choose-arena {
   margin: 0.75rem;
   margin-top: 0;
-  border-radius: 5px;
-
+  padding: 1.5rem;
+  padding-top: 0.5rem;
   grid-area: arena;
   display: grid;
-  grid-template-columns: 60% 40%;
-  grid-template-rows: 55% 45%;
-  grid-template-areas:
-    'arena-title arena-title'
-    'arena-form arena-form';
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 100%;
+  grid-template-areas: 'arena1 arena2 arena3 arena4';
 }
 
-.arena-form {
-  grid-area: arena-form;
+.potting-shed-choice {
+  grid-area: arena2;
+  height: 3.5rem;
+  width: 3.5rem;
+  /* border: solid 3px black; */
 }
 
-.arena-title {
-  font-size: 1.25rem;
-  grid-area: arena-title;
+.tesco-carpark-choice {
+  grid-area: arena3;
+  height: 3.5rem;
+  width: 3.5rem;
+  margin-left: 0.75rem;
+  /* border: solid 3px black; */
+}
+
+.arena-3-choice {
+  grid-area: arena1;
+  height: 3.5rem;
+  width: 3.5rem;
+
+  /* border: solid 3px rgb(114, 10, 10); */
+}
+
+.arena-4-choice {
+  grid-area: arena4;
+  height: 3.5rem;
+  width: 3.5rem;
+  margin-left: 0.75rem;
+  /* border: solid 3px rgb(114, 10, 10); */
 }
 
 .home-page__btn {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fighters } from '../fighters';
 import '../styles/Fighter.css';
-import pikMeBtn from '../images/green_btn.png';
+import pikMeBtn from '../images/add-button.png';
 import left from '../images/left_arrow.png';
 import right from '../images/right_arrow.png';
 
@@ -29,7 +29,7 @@ const Fighter2 = ({ fighter2, setFighter2 }) => {
     setSelected2(true);
   };
   if (selected2 === true) {
-    return <h2> Ready to Fight! </h2>;
+    return <h2 className='ready-to-fight'> Ready to Fight! </h2>;
   } else {
     return (
       <section className='fighter-box'>
@@ -66,12 +66,14 @@ const Fighter2 = ({ fighter2, setFighter2 }) => {
             onClick={nextImage}
           ></img>
         </div>
-        <img
-          src={pikMeBtn}
-          alt='select character button'
-          onClick={handlePickMe}
-          className='fighter-btn btn'
-        ></img>
+        <div className='pik-me-container'>
+          <img
+            src={pikMeBtn}
+            alt='select character button'
+            onClick={handlePickMe}
+            className='fighter-btn'
+          ></img>
+        </div>
       </section>
     );
   }

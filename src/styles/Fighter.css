@@ -15,7 +15,7 @@
   grid-template-areas:
     '. image .'
     'left image right'
-    'button button button';
+    '. button .';
 }
 
 .left-arrow-container {
@@ -93,11 +93,31 @@
   flex: 1;
 }
 
-.fighter-btn {
-  height: auto;
-  width: 6rem;
-  border: none;
-  grid-area: button;
+.pik-me-container {
+  background-image: url('../images/arrow_bck_2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
   justify-self: center;
-  padding: 4px;
+  height: 3.25rem;
+  width: 3.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: button;
+}
+
+.fighter-btn {
+  width: auto;
+  height: 2.5rem;
+  border: none;
+  align-self: center;
+  z-index: 100;
+}
+
+.ready-to-fight {
+  font-family: 'Short Stack', cursive;
+  color: rgb(53, 41, 27);
+  font-size: 1.75rem;
+  text-transform: uppercase;
 }
