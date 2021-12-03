@@ -1,8 +1,8 @@
-import worm from './images/worm.jpg';
-import spider from './images/spider.jpg';
-import bee from './images/bee.jpg';
-import ladybird from './images/ladybird.jpg';
-import wasp from './images/wasp.jpg';
+import worm from './images/worm_2.png';
+import spider from './images/spider1.png';
+import bee from './images/bee1.png';
+import ladybird from './images/lady1.png';
+import wasp from './images/wasp1.png';
 
 export const fighters = [
   {

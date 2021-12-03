@@ -26,8 +26,7 @@ const Home = ({
       history.push('/arena');
     }
   };
-  console.log(fighter2, 'f2');
-  console.log(fighter1, 'f1');
+
   return (
     <main className='home-page'>
       <section className='choose-fighters'>

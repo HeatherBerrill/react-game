@@ -8,7 +8,6 @@
 }
 
 .game-title {
-  /* border: solid 2px black; */
   background-image: url('../images/title.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -37,7 +36,6 @@
   position: relative;
   top: 22%;
   left: 6%;
-  /* padding: 0.5rem 1rem; */
   font-size: 1.5rem;
 }
 
@@ -48,3 +46,31 @@
 .landing-page__btn:active {
   transform: scale(0.95);
 }
+
+@media only screen and (min-width: 700px) {
+  .landing-page {
+    background-image: url('../images/tablet_landing_page.jpg');
+  }
+
+  .game-title {
+    height: 30rem;
+    width: auto;
+    top: 6%;
+    left: 22%;
+  }
+
+  .play-button-container {
+    height: 15rem;
+    width: 15rem;
+    top: 58%;
+    left: 34%;
+  }
+
+  .landing-page__btn {
+    height: 5.5rem;
+  }
+}
+
+/* @media only screen and (min-width: 1200px) {
+ 
+} */

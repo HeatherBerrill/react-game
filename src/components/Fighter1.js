@@ -31,7 +31,11 @@ const Fighter1 = ({ fighter1, setFighter1 }) => {
   };
 
   if (selected1 === true) {
-    return <h2 className='ready-to-fight'> Ready to Fight! </h2>;
+    return (
+      <div className='ready-to-fight-container'>
+        <h2 className='ready-to-fight'> {fighter1} is Ready to Fight! </h2>
+      </div>
+    );
   } else {
     return (
       <section className='fighter-box'>
@@ -50,7 +54,7 @@ const Fighter1 = ({ fighter1, setFighter1 }) => {
               className={index === image ? 'fighter active' : 'fighter'}
               key={index}
             >
-              <h4 className='fighter-name'> {singleFighter.name} </h4>
+              {/* <h4 className='fighter-name'> {singleFighter.name} </h4> */}
               {index === image && (
                 <img
                   value={index}
