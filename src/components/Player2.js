@@ -14,13 +14,13 @@ const Player2 = ({ fighter2, player2, setPlayer2 }) => {
 
   return (
     <div className='player-card'>
-      <h2 className='player-points'> Points: {player2.points} </h2>
-      <img
+      {/* <h2 className='player-points'> Points: {player2.points} </h2> */}
+      {/* <img
         src={deleteBtn}
         alt='clear points'
         className='player-btn btn'
         onClick={clearPoints}
-      ></img>
+      ></img> */}
     </div>
   );
 };
