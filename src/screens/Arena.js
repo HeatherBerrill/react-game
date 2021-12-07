@@ -3,7 +3,7 @@ import '../styles/Arena.css';
 // import Player2 from '../components/Player2';
 import { fighters } from '../fighters';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 const Arena = ({
   arena,
   player2,
@@ -17,6 +17,8 @@ const Arena = ({
 }) => {
   const [healthBar1, setHealthBar1] = useState(100);
   const [healthBar2, setHealthBar2] = useState(100);
+
+  // useEffect(() => {}, [healthBar1, healthBar2]);
   // BATTLE LOGIC
 
   // random factor for attacks
@@ -35,72 +37,84 @@ const Arena = ({
     });
     return chosenFighter;
   };
+  //player stats
+  const player1Stats = fighterStats(player1);
+  const player2Stats = fighterStats(player2);
 
   //player1 attack logic
   const player1Attack = () => {
     const attack1 = player1Stats.attackDamage * randomFactor();
-    console.log(attack1, 'attack');
-    player2Stats.health -= attack1;
-    setHealthBar2(player2Stats.health);
-    if (player2Stats.health <= 0) {
-      console.log(`${player2.fighter} is dead!! Player 1 has won.`);
-      console.log('Battle over, Player 1 has won!');
-      player1.points += 1;
-    } else {
-      console.log(`Player 2 health is now ${player2Stats.health}`);
-    }
+
+    setHealthBar2((currBar2) => {
+      if (currBar2 <= 0) {
+        console.log(`${player2.fighter} is dead!! Player 1 has won.`);
+        console.log('Battle over, Player 1 has won!');
+        player1.points += 1;
+        return 0;
+      } else {
+        return currBar2 - attack1;
+      }
+    });
   };
 
   //player2 attack logic
+
   const player2Attack = () => {
     const attack2 = player2Stats.attackDamage * randomFactor();
-    player1Stats.health -= attack2;
-    setHealthBar1(player1Stats.health);
-    if (player1Stats.health <= 0) {
-      console.log(`${player1.fighter} is dead!! Player 2 has won.`);
-      console.log('Battle over, Player 2 has won!');
-      player2.points += 1;
-    } else {
-      console.log(`Player 1 health is now ${player1Stats.health}`);
-    }
+
+    setHealthBar1((currBar1) => {
+      if (currBar1 <= 0) {
+        console.log(`${player1.fighter} is dead!! Player 2 has won.`);
+        console.log('Battle over, Player 2 has won!');
+        player2.points += 1;
+        return 0;
+      } else {
+        return currBar1 - attack2;
+      }
+    });
   };
+  console.log(healthBar1, 'outside 2 attack');
+  // const player2Attack = () => {
+  //   const attack2 = player2Stats.attackDamage * randomFactor();
+  //   player1Stats.health -= attack2;
+  //   setHealthBar1(player1Stats.health);
+  //   if (player1Stats.health <= 0) {
+  //     console.log(`${player1.fighter} is dead!! Player 2 has won.`);
+  //     console.log('Battle over, Player 2 has won!');
+  //     player2.points += 1;
+  //   } else {
+  //     console.log(`Player 1 health is now ${player1Stats.health}`);
+  //   }
+  // };
 
   //end fight to go back to home
   const resetFighters = () => {
     setFighter1('');
     setFighter2('');
   };
-
+  console.log(healthBar1, healthBar2, 'outside');
   // start the fight
-
-  // console.log(attackLoop);
-  // const fight = () => {
   const fight = () => {
-    setTimeout(() => {
+    console.log(healthBar1, healthBar2, 'inside');
+    if (healthBar1 > 0 && healthBar2 > 0) {
       player2Attack();
-    }, 3000);
-    if (player1Stats.health > 0 && player2Stats.health > 0) {
-      fight();
-    } else if (player1Stats.health <= 0 || player2Stats.health <= 0) {
+      setTimeout(() => {
+        fight();
+      }, 2000);
+    } else {
       console.log('GAME OVER!');
     }
   };
 
-  // while (player1Stats.health > 0 && player2Stats.health > 0) {
-  //   const attackLoop = setInterval(() => {
-  //     console.log('interval');
-  //     player2Attack();
-  //   }, 3000);
-  // }
-
-  //player stats
-  const player1Stats = fighterStats(player1);
-  const player2Stats = fighterStats(player2);
-
   //PAGE CONTENT
   return (
     <section data-testid='background' className={`${arena} arena-page`}>
-      <button onClick={fight} className='arena-page__title'>
+      <button
+        onClick={() => {
+          fight(healthBar1, healthBar2);
+        }}
+        className='arena-page__title'
+      >
         {' '}
         FIGHT!
       </button>
