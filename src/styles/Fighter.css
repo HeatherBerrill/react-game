@@ -11,11 +11,10 @@
   padding-bottom: 1rem;
   grid-template-columns: 10% 80% 10%;
   justify-content: column;
-  grid-template-rows: 25% 50% 25%;
+  grid-template-rows: 50% 25%;
   grid-template-areas:
     '. image .'
-    'left image right'
-    '. button .';
+    'left button right';
 }
 
 .left-arrow-container {
@@ -59,16 +58,11 @@
 
 .fighter {
   grid-area: image;
-  width: 8rem;
-  height: 8rem;
-  display: grid;
+  width: 5rem;
+  height: 5rem;
+
   justify-self: center;
-  justify-content: space-between;
-  grid-template-columns: 100%;
-  grid-template-rows: 30% 70%;
-  grid-template-areas:
-    'f-image'
-    'f-image';
+
   opacity: 0;
 }
 
@@ -77,20 +71,10 @@
 }
 
 .fighter-image {
-  grid-area: f-image;
-  justify-self: center;
+  align-self: center;
   height: 5rem;
   width: auto;
-  flex: 1.5;
-}
-
-.fighter-name {
-  font-family: 'Short Stack', cursive;
-  color: rgb(53, 41, 27);
-  grid-area: f-name;
-  align-self: center;
-  justify-self: center;
-  flex: 1;
+  padding-bottom: 0;
 }
 
 .pik-me-container {

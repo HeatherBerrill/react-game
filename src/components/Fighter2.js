@@ -5,7 +5,7 @@ import pikMeBtn from '../images/add-button.png';
 import left from '../images/left_arrow.png';
 import right from '../images/right_arrow.png';
 
-const Fighter2 = ({ fighter2, setFighter2 }) => {
+const Fighter2 = ({ fighter2, setFighter2, setPlayer2, player2 }) => {
   const [image, setImage] = useState(0);
   const [chosenFighter, setChosenFighter] = useState(0);
   const [selected2, setSelected2] = useState(false);
@@ -13,7 +13,8 @@ const Fighter2 = ({ fighter2, setFighter2 }) => {
 
   useEffect(() => {
     setChosenFighter(image);
-  }, [image]);
+    setPlayer2({ ...player2, fighter: fighter2 });
+  }, [image, fighter2]);
 
   const nextImage = () => {
     setImage(image === length - 1 ? 0 : image + 1);

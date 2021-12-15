@@ -12,14 +12,15 @@
 }
 
 .choose-fighters {
-  margin: 0.75rem;
+  margin: 0.5rem;
   border-radius: 5px;
   grid-area: fighters;
   display: grid;
-
+  height: 100%;
   grid-template-columns: 100%;
-  grid-template-rows: 40% 40%;
+  grid-template-rows: 5rem 35% 35%;
   grid-template-areas:
+    'player1'
     'frame1'
     'frame2';
 }
@@ -33,14 +34,11 @@
 }
 .player-1 {
   grid-area: player1;
+  height: 2rem;
 }
 
 .player-fighter1 {
   grid-area: fighter1;
-}
-
-.player-2 {
-  grid-area: player-2;
 }
 
 .player-fighter2 {

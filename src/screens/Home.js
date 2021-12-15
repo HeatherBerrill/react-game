@@ -30,14 +30,14 @@ const Home = ({
   return (
     <main className='home-page'>
       <section className='choose-fighters'>
+        <Player1
+          className='player-1'
+          player1={player1}
+          setPlayer1={setPlayer1}
+          fighter1={fighter1}
+          setFighter1={setFighter1}
+        />
         <Frame className='player1-frame'>
-          <Player1
-            className='player-1'
-            player1={player1}
-            setPlayer1={setPlayer1}
-            fighter1={fighter1}
-            setFighter1={setFighter1}
-          />
           <Fighter1
             className='player-fighter1'
             fighter1={fighter1}
@@ -45,17 +45,12 @@ const Home = ({
           />
         </Frame>
         <Frame className='player2-frame'>
-          <Player2
-            className='player-2'
-            player2={player2}
-            setPlayer2={setPlayer2}
-            fighter2={fighter2}
-            setFighter2={setFighter2}
-          />
           <Fighter2
             className='player-fighter2'
             fighter2={fighter2}
             setFighter2={setFighter2}
+            setPlayer2={setPlayer2}
+            player2={player2}
           />
         </Frame>
       </section>

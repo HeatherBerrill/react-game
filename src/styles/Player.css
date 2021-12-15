@@ -1,16 +1,11 @@
 .player-card {
-  align-content: flex-end;
   display: flex;
   width: 75%;
-
-  height: 4rem;
-  position: relative;
-  top: 1rem;
-  right: 0;
-  justify-content: flex-end;
-  margin-top: 1rem;
+  height: 2rem;
+  justify-content: center;
   margin-bottom: 0;
   padding-top: 0.5rem;
+  padding-left: 5rem;
   padding-bottom: 0;
 }
 
@@ -18,10 +13,8 @@
   font-family: 'Short Stack', cursive;
   color: rgb(53, 41, 27);
   align-self: center;
-
-  padding-right: 0.25rem;
-  margin-left: 0;
-  font-size: 0.75rem;
+  padding-right: 1rem;
+  font-size: 1.5rem;
 }
 
 .player-btn {
@@ -29,5 +22,5 @@
   width: auto;
   align-self: center;
   font-size: 0.75rem;
-  padding: 0 3px;
+  padding-left: 5rem;
 }
