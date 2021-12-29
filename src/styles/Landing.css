@@ -1,32 +1,52 @@
+.background_landing {
+  background-color: green;
+  width: 100vw;
+  height: 100vh;
+  justify-items: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
 .landing-page {
-  position: absolute;
+  /* position: absolute; */
+  margin: 0;
   background-image: url('../images/mobile_landing_page.jpg');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 60% 40%;
+  grid-template-areas:
+    'title'
+    'play_btn';
   width: 100vw;
   height: 100vh;
 }
 
 .game-title {
+  grid-area: title;
   background-image: url('../images/title.png');
   background-size: contain;
   background-repeat: no-repeat;
-  position: absolute;
+  /* position: absolute; */
   height: 18rem;
   width: auto;
-  top: 4%;
-  left: 15%;
+  /* top: 4%;
+  left: 15%; */
 }
 
 .play-button-container {
+  grid-area: play_btn;
   background-image: url('../images/play_button_bck.png');
   background-size: contain;
   background-repeat: no-repeat;
   height: 11rem;
   width: 11rem;
-  position: absolute;
+  /* position: absolute;
   top: 55%;
-  left: 23%;
+  left: 23%; */
 }
 
 .landing-page__btn {
@@ -50,6 +70,11 @@
 @media only screen and (min-width: 700px) {
   .landing-page {
     background-image: url('../images/tablet_landing_page.jpg');
+
+    width: 700px;
+    height: 100%;
+    align-self: center;
+    margin: auto;
   }
 
   .game-title {

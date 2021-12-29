@@ -17,7 +17,7 @@ const Player1 = ({ fighter1, player1, setPlayer1 }) => {
       <img
         src={deleteBtn}
         alt='clear points'
-        className='player-btn btn'
+        className='delete-btn btn'
         onClick={clearPoints}
       ></img>
     </div>

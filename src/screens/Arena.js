@@ -2,6 +2,9 @@ import '../styles/Arena.css';
 import { fighters } from '../fighters';
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
+import heart from '../images/heart.png';
+import healthBar from '../images/health_bar.png';
+import attack from '../images/attack_button.png';
 const Arena = ({
   arena,
   player2,
@@ -13,7 +16,8 @@ const Arena = ({
 }) => {
   const [healthBar1, setHealthBar1] = useState(100);
   const [healthBar2, setHealthBar2] = useState(100);
-
+  const [seeStart, setSeeStart] = useState(true);
+  const [winner, setWinner] = useState('');
   const firstRender = useRef(true);
   // BATTLE LOGIC
 
@@ -34,7 +38,7 @@ const Arena = ({
 
   // random factor for attacks
   const randomFactor = () => {
-    const amount = Math.ceil(Math.random() * 5);
+    const amount = Math.ceil(Math.random() * 3);
     return amount;
   };
 
@@ -61,6 +65,7 @@ const Arena = ({
       if (currBar2 <= attack1) {
         console.log(`${player2.fighter} is dead!! Player 1 has won.`);
         console.log('Battle over, Player 1 has won!');
+        setWinner('player1');
         player1.points += 1;
         return 0;
       } else {
@@ -71,8 +76,11 @@ const Arena = ({
 
   //player2 attack logic
   console.log(healthBar1, healthBar2);
+  console.log(winner, 'winner');
 
   const player2Attack = () => {
+    if (healthBar1 === 100 && healthBar2 === 100) setSeeStart(false);
+
     const attack2 = player2Stats.attackDamage * randomFactor();
 
     console.log(attack2, 'attack');
@@ -81,6 +89,7 @@ const Arena = ({
       if (currBar1 <= attack2) {
         console.log(`${player1.fighter} is dead!! Player 2 has won.`);
         console.log('Battle over, Player 2 has won!');
+        setWinner('player2');
         player2.points += 1;
         return 0;
       } else {
@@ -93,74 +102,130 @@ const Arena = ({
   const resetFighters = () => {
     setFighter1('');
     setFighter2('');
+    setWinner('');
   };
 
   //PAGE CONTENT
   return (
-    <section data-testid='background' className={`${arena} arena-page`}>
-      <button
-        disabled={healthBar1 === 0 || healthBar2 === 0}
-        onClick={() => {
-          player2Attack();
-        }}
-        // className='arena-page__title'
-      >
-        {' '}
-        FIGHT!
-      </button>
-      <div>
-        {' '}
-        <p> Health = {healthBar1} </p>{' '}
-      </div>
-      {fighters.map((singleFighter) => {
-        return (
-          <div key={singleFighter.name} className='fighter1-imagebox__arena'>
-            {singleFighter.name === fighter1 && (
-              <img
-                className={'player-image'}
-                value={singleFighter.name}
-                alt={singleFighter.name}
-                src={singleFighter.image}
-              ></img>
-            )}
+    <div className='background-arena'>
+      <section data-testid='background' className={`${arena} arena-page`}>
+        <div className='player-1__container'>
+          <div>
+            {' '}
+            <p className='fighter_name'>
+              {' '}
+              {fighter1} Health = {healthBar1}{' '}
+            </p>{' '}
           </div>
-        );
-      })}
-      <button
-        disabled={healthBar1 === 0 || healthBar2 === 0}
-        onClick={() => {
-          player1Attack();
-        }}
-      >
-        {' '}
-        Attack{' '}
-      </button>
-      <div>
-        {' '}
-        <p> Health = {healthBar2} </p>
-      </div>
+          {fighters.map((singleFighter) => {
+            return (
+              <div
+                key={singleFighter.name}
+                className='fighter1-imagebox__arena'
+              >
+                {singleFighter.name === fighter1 && (
+                  <img
+                    className={'player-image'}
+                    value={singleFighter.name}
+                    alt={singleFighter.name}
+                    src={singleFighter.image}
+                  ></img>
+                )}
+              </div>
+            );
+          })}
 
-      {fighters.map((singleFighter) => {
-        return (
-          <div key={singleFighter.name} className='fighter2-imagebox__arena'>
-            {singleFighter.name === fighter2 && (
-              <img
-                className={'player-image'}
-                value={singleFighter.name}
-                alt={singleFighter.name}
-                src={singleFighter.image}
-              ></img>
-            )}
+          <div className='healthBar-container'>
+            <img src={heart} alt='heart__1' className='heart'></img>
+            <img
+              src={healthBar}
+              alt='health-bar__1'
+              className='health-bar'
+            ></img>
+            <div
+              className='progress-bar'
+              style={{ height: `${healthBar1}%` }}
+            ></div>
           </div>
-        );
-      })}
-      <Link to='/home'>
-        <button className='arena-page__btn' onClick={resetFighters}>
+        </div>
+        <div className='player-2__container'>
+          <div>
+            {' '}
+            <p className='opponent_name'>
+              {' '}
+              {fighter2} Health = {healthBar2}{' '}
+            </p>
+          </div>
+
+          {fighters.map((singleFighter) => {
+            return (
+              <div
+                key={singleFighter.name}
+                className='fighter2-imagebox__arena'
+              >
+                {singleFighter.name === fighter2 && (
+                  <img
+                    className={'player-image'}
+                    value={singleFighter.name}
+                    alt={singleFighter.name}
+                    src={singleFighter.image}
+                  ></img>
+                )}
+              </div>
+            );
+          })}
+          <div className='healthBar-container'>
+            <img src={heart} alt='heart__2' className='heart'></img>
+            <img
+              src={healthBar}
+              alt='health-bar__2'
+              className='health-bar'
+            ></img>
+            <div
+              className='progress-bar'
+              style={{ height: `${healthBar2}%` }}
+            ></div>
+          </div>
+        </div>
+        <div
+          style={seeStart === true ? { opacity: 1 } : { opacity: 0 }}
+          disabled={healthBar1 === 0 || healthBar2 === 0}
+          onClick={() => {
+            player2Attack();
+          }}
+          className='fight__button'
+        >
           {' '}
-          End Fight{' '}
-        </button>
-      </Link>
-    </section>
+          {fighter2} will attack you. Press{' '}
+          <img className='attack_thumbnail' src={attack}></img> to fight back!
+          <span> START! </span>
+        </div>
+        <img
+          src={attack}
+          alt='attack button'
+          className='attack_button'
+          disabled={healthBar1 === 0 || healthBar2 === 0}
+          onClick={() => {
+            player1Attack();
+          }}
+        ></img>
+        <Link to='/home' disabled={!winner}>
+          <div
+            disabled={!winner}
+            className='end-fight__screen'
+            onClick={resetFighters}
+            style={winner ? { opacity: 1 } : { opacity: 0 }}
+          >
+            <p>
+              {' '}
+              {winner === 'player1'
+                ? 'Congratulations you won! HOME'
+                : 'Sorry you lost. Try again'}{' '}
+            </p>
+          </div>
+        </Link>
+      </section>
+    </div>
   );
 };
 
