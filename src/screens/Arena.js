@@ -5,6 +5,9 @@ import { useState, useEffect, useRef } from 'react';
 import heart from '../images/heart.png';
 import healthBar from '../images/health_bar.png';
 import attack from '../images/attack_button.png';
+import go from '../images/go_btn.png';
+import home from '../images/home_btn.png';
+
 const Arena = ({
   arena,
   player2,
@@ -112,10 +115,7 @@ const Arena = ({
         <div className='player-1__container'>
           <div>
             {' '}
-            <p className='fighter_name'>
-              {' '}
-              {fighter1} Health = {healthBar1}{' '}
-            </p>{' '}
+            <p className='fighter_name'>{fighter1}</p>
           </div>
           {fighters.map((singleFighter) => {
             return (
@@ -151,10 +151,7 @@ const Arena = ({
         <div className='player-2__container'>
           <div>
             {' '}
-            <p className='opponent_name'>
-              {' '}
-              {fighter2} Health = {healthBar2}{' '}
-            </p>
+            <p className='opponent_name'> {fighter2}</p>
           </div>
 
           {fighters.map((singleFighter) => {
@@ -188,17 +185,24 @@ const Arena = ({
           </div>
         </div>
         <div
+          className='dark'
           style={seeStart === true ? { opacity: 1 } : { opacity: 0 }}
-          disabled={healthBar1 === 0 || healthBar2 === 0}
-          onClick={() => {
-            player2Attack();
-          }}
-          className='fight__button'
         >
-          {' '}
-          {fighter2} will attack you. Press{' '}
-          <img className='attack_thumbnail' src={attack}></img> to fight back!
-          <span> START! </span>
+          <div
+            style={
+              seeStart === true || winner ? { opacity: 1 } : { opacity: 0 }
+            }
+            disabled={healthBar1 === 0 || healthBar2 === 0}
+            onClick={() => {
+              player2Attack();
+            }}
+            className='fight__button'
+          >
+            {' '}
+            {fighter2} will attack you. Press{' '}
+            <img className='attack_thumbnail' src={attack}></img> to fight back!
+            <img className='go_btn' src={go}></img>
+          </div>
         </div>
         <img
           src={attack}
@@ -219,9 +223,10 @@ const Arena = ({
             <p>
               {' '}
               {winner === 'player1'
-                ? 'Congratulations you won! HOME'
+                ? 'Congratulations you won!'
                 : 'Sorry you lost. Try again'}{' '}
             </p>
+            <img className='home_btn' src={home}></img>
           </div>
         </Link>
       </section>

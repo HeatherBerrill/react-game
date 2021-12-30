@@ -1,5 +1,5 @@
-.background_arena {
-  background-color: green;
+.background-arena {
+  background-image: url('../images/desktop_pattern.jpg');
   width: 100vw;
   height: 100vh;
   justify-items: center;
@@ -61,11 +61,21 @@
 }
 
 .fighter_name {
+  background-color: rgba(255, 255, 255, 0.349);
+  border-radius: 5px;
   grid-area: name-1;
+  font-family: 'Short Stack', cursive;
+  color: rgb(37, 24, 17);
+  font-size: 1.5rem;
 }
 
 .opponent_name {
   grid-area: name-2;
+  font-family: 'Short Stack', cursive;
+  color: rgb(37, 24, 17);
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.349);
+  border-radius: 5px;
 }
 .end-fight__btn {
   background-color: var(--secondary-color);
@@ -133,7 +143,11 @@
   top: 70%;
   left: 40%;
 }
+
 .fight__button {
+  background-image: url('../images/back_board1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   opacity: 1;
   z-index: 30;
   height: 10rem;
@@ -145,16 +159,40 @@
   position: absolute;
   top: 10%;
   left: 15%;
-  background-color: yellow;
+  font-family: 'Short Stack', cursive;
+  color: rgb(37, 24, 17);
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
+.go_btn {
+  height: 3rem;
+  width: auto;
+  margin: 0.5rem;
+}
 .attack_thumbnail {
-  height: 2rem;
+  height: 1.5rem;
   width: auto;
 }
 
+.home_btn {
+  height: 3rem;
+  width: auto;
+}
+
+.dark {
+  background-color: rgba(36, 175, 9, 0.829);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  z-index: 25;
+}
 .end-fight__screen {
-  background-color: yellowgreen;
+  background-image: url('../images/back_board2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 10rem;
   width: 15rem;
   z-index: 30;
@@ -166,68 +204,31 @@
   position: absolute;
   top: 30%;
   left: 15%;
+  font-family: 'Short Stack', cursive;
+  color: rgb(37, 24, 17);
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
-/* @media only screen and (min-width: 700px) {
-
+@media only screen and (min-width: 700px) {
   .arena-page {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    justify-content: center;
-    margin: 0;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100vh;
-    grid-template-areas: 'player1-container player2-container';
+    background-image: url('../images/tablet_arena_page.jpg');
+    width: 700px;
+    height: 100%;
+    align-self: center;
+    margin: auto;
   }
-  
-  .potting-shed {
-    background-color: rgb(23, 199, 67);
-  }
-  
-  .tesco-carpark {
-    background-image: url('../images/mobile_arena_page.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  
+
   .player-1__container {
-    grid-area: player1-container;
-    height: 90vh;
-    margin: 0.5rem;
-    justify-content: center;
-    display: grid;
-    width: 10rem;
+    margin: 1rem;
     margin-top: 3rem;
-    grid-template-columns: 100%;
-    grid-template-rows: 10% 25% 65%;
-    grid-template-areas:
-      'name1'
-      'image-1'
-      'healthbar1';
+    width: 18rem;
   }
-  
+
   .player-2__container {
-    grid-area: player2-container;
-    height: 90vh;
-    margin: 0.5rem;
+    margin: 1rem;
     margin-top: 3rem;
-    display: grid;
-    width: 10rem;
-    grid-template-columns: 100%;
-    grid-template-rows: 10% 25% 65%;
-    grid-template-areas:
-      'name2'
-      'image-2'
-      'healthbar2';
-  }
-  
-  .fighter_name {
-    grid-area: name-1;
-  }
-  
-  .opponent_name {
-    grid-area: name-2;
+    width: 18rem;
   }
   .end-fight__btn {
     background-color: var(--secondary-color);
@@ -237,84 +238,43 @@
     align-self: center;
     justify-self: center;
   }
-  
-  .fighter1-imagebox__arena {
-    grid-area: image-1;
-  }
-  
-  .fighter2-imagebox__arena {
-    grid-area: image-2;
-  }
-  
+
   .player-image {
-    height: 9rem;
-    width: auto;
+    height: 13rem;
   }
+
   .healthBar-container {
-    padding: 0.5rem;
-    display: grid;
-    justify-items: center;
-    flex-direction: column;
-    grid-template-columns: 100%;
-    grid-template-rows: 20% 80%;
-    grid-template-areas:
-      'heart'
-      'health-bar';
+    grid-template-rows: 30% 70%;
   }
-  
+
   .heart {
-    grid-area: heart;
-    height: 4rem;
-    width: auto;
-    z-index: 20;
+    height: 6rem;
   }
-  
+
   .health-bar {
-    position: relative;
-    top: -2.5rem;
-    height: 20rem;
-    width: auto;
-    grid-area: health-bar;
+    top: -7rem;
+    height: 26rem;
   }
   .progress-bar {
-    background-color: rgb(155, 28, 28);
-    grid-area: health-bar;
-    position: relative;
-    top: -1.5rem;
-    left: 2px;
-    width: 1.5rem;
-    z-index: 10;
+    top: -6.5rem;
+    width: 2rem;
   }
-  
+
   .attack_button {
-    opacity: 1;
-    z-index: 20;
-    height: 5rem;
-    width: auto;
-    position: absolute;
-    top: 70%;
-    left: 40%;
+    height: 7rem;
+    left: 42%;
   }
+
   .fight__button {
-    opacity: 1;
-    z-index: 30;
+    width: 20rem;
     height: 10rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 15rem;
-    position: absolute;
-    top: 10%;
-    left: 15%;
-    background-color: yellow;
   }
-  
+  /* 
   .attack_thumbnail {
     height: 2rem;
     width: auto;
   }
-  
+
   .end-fight__screen {
     background-color: yellowgreen;
     height: 10rem;
@@ -328,5 +288,5 @@
     position: absolute;
     top: 30%;
     left: 15%;
-  } 
-} */
+  } */
+}
