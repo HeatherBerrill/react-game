@@ -108,6 +108,10 @@ const Arena = ({
     setWinner('');
   };
 
+  // const visible = {
+  //   opacity: 1, z-index: 40
+  // }
+
   //PAGE CONTENT
   return (
     <div className='background-arena'>
@@ -186,13 +190,19 @@ const Arena = ({
         </div>
         <div
           className='dark'
-          style={seeStart === true ? { opacity: 1 } : { opacity: 0 }}
+          style={
+            seeStart === true
+              ? { opacity: 1, zIndex: 40 }
+              : { opacity: 0, zIndex: 0 }
+          }
         >
           <div
             style={
-              seeStart === true || winner ? { opacity: 1 } : { opacity: 0 }
+              seeStart === true
+                ? { opacity: 1, zIndex: 40 }
+                : { opacity: 0, zIndex: 0 }
             }
-            disabled={healthBar1 === 0 || healthBar2 === 0}
+            // disabled={healthBar1 === 0 || healthBar2 === 0}
             onClick={() => {
               player2Attack();
             }}
@@ -213,12 +223,20 @@ const Arena = ({
             player1Attack();
           }}
         ></img>
-        <Link to='/home' disabled={!winner}>
+
+        <div
+          className='dark-2'
+          style={
+            winner ? { opacity: 1, zIndex: 40 } : { opacity: 0, zIndex: 0 }
+          }
+        >
           <div
             disabled={!winner}
             className='end-fight__screen'
             onClick={resetFighters}
-            style={winner ? { opacity: 1 } : { opacity: 0 }}
+            style={
+              winner ? { opacity: 1, zIndex: 40 } : { opacity: 0, zIndex: 0 }
+            }
           >
             <p>
               {' '}
@@ -226,9 +244,11 @@ const Arena = ({
                 ? 'Congratulations you won!'
                 : 'Sorry you lost. Try again'}{' '}
             </p>
-            <img className='home_btn' src={home}></img>
+            <Link to='/home' disabled={!winner}>
+              <img className='home_btn' src={home}></img>
+            </Link>
           </div>
-        </Link>
+        </div>
       </section>
     </div>
   );
