@@ -24,6 +24,7 @@ const Arena = ({
   const firstRender = useRef(true);
   // BATTLE LOGIC
 
+  console.log(arena, 'arena');
   // replays the attack on player 1 every time health bar amount changes
   useEffect(() => {
     if (firstRender.current) {

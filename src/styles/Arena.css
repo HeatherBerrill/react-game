@@ -20,11 +20,13 @@
 }
 
 .potting-shed {
-  background-color: rgb(23, 199, 67);
+  background-image: url('../images/mobile_arena_page_potting_1_blur.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .tesco-carpark {
-  background-image: url('../images/mobile_arena_page.jpg');
+  background-image: url('../images/mobile_arena_page_blur.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -220,13 +222,19 @@
 
 @media only screen and (min-width: 700px) {
   .arena-page {
-    background-image: url('../images/tablet_arena_page.jpg');
     width: 700px;
     height: 100%;
     align-self: center;
     margin: auto;
   }
 
+  .potting-shed {
+    background-image: url('../images/tablet_arena_page_potting_1_blur.jpg');
+  }
+
+  .tesco-carpark {
+    background-image: url('../images/tablet_arena_page_blur.jpg');
+  }
   .player-1__container {
     margin: 1rem;
     margin-top: 3rem;
