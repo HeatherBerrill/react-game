@@ -104,7 +104,6 @@
   .home-page {
     background-image: url('../images/tablet_home_page.jpg');
     width: 700px;
-    height: 100%;
     align-self: center;
     margin: auto;
   }
